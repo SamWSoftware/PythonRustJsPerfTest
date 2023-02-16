@@ -1,0 +1,16 @@
+service: python
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: eu-central-1
+
+functions:
+  originalCode:
+    handler: src/originalCode.lambda_handler
+    memorySize: 512
+  updatedCode:
+    handler: src/updatedCode.lambda_handler
+    memorySize: 512
