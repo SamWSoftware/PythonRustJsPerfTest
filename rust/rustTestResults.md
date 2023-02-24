@@ -4,11 +4,11 @@ The issue with the original code is that, although claims were made of 100 concu
 
 ![Rust Single Thread](../images/RustSingleThread.png "Rust Single Thread")
 
-This means that you're not completing the same amount of work, therefore it is pointless comparing them.
+This means that the lambda is not completing the same amount of work as the other languages, therefore it is unreasonable to be comparing them.
 
 ## New Code
 
-This new code adds a for loop to ensure the calculation is completed 25 time. The number of loops and the value counted up to are both variablised so to prevent pre-calculation.
+This new code adds a for loop to ensure the calculation is completed 25 time. The number of loops and the value counted up to are both variablised so to prevent pre-calculation. There probably are better ways to do this but this was the only way I knew to compare equivilent processes.
 
 ### 512 MB
 

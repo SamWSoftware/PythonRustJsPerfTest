@@ -12,6 +12,8 @@
 
 ## New Code
 
+Since the memory is under 1.8GB, the lambdas will be given a fraction of a CPU thread. This makes using multiprocessing an unnecessary overhead. The code has been changed to do series loops instead.
+
 ### 512 MB
 
 | run | time (ms) | cold start |

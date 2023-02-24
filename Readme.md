@@ -2,11 +2,11 @@
 
 The aim of this is to test the performance of different languages.
 
-This original started when Noah Gift did some test and got some questionable results. I wanted to re-run his tests to verify the results, and then also complete some more testing that I thought was more thorough.
+This original started when some performance tests were published online. The magnitude of the difference seemed unlikely so I wanted to re-run the tests to verify the results. I also want to complete some further testing using other benchmarks.
 
 ## Initial Test setup
 
-The first test came from Noah's experiment and is a request to sum from 1 to 10,000 and then do that 25 times.
+The first test came from the experiment published online. This case is a request to sum from 1 to 10,000 and then do that 25 times.
 
 In all cases the total billed duration for the invocation was used.
 
@@ -21,9 +21,9 @@ In Rust the key `loop` appears to be protected so it was changed to loops.
 
 ### Original Code
 
-This is based on a test done by Noah. His exact code is used as a reference.
+The exact code is included in this repo as a reference.
 
-Having tested the code, it was found that the rust code was only doing the "sum" function once, not 25 times. This completely nullifies any of the results he found as the workload was not the same.
+Having tested the code, it was found that the rust code was only doing the "sum" function once, not 25 times. This completely nullifies any of the original results, as the workload was not the same.
 
 ### Updated Code
 
