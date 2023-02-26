@@ -42,23 +42,27 @@ I do want to state that I am not a Python or Rust developer. There are many opti
 | Language   | Average time (ms) | Average time (excluding cold start run) |
 | ---------- | ----------------- | --------------------------------------- |
 | Python     | 63.2              | 63.2                                    |
+| Python v2  | 17.8              | 17.8                                    |
 | Rust       | 62.6              | 52.5                                    |
 | JavaScript | 68                | 61.25                                   |
 
-From this you can see that there is a negligable difference between these languages. Cold starts apear to have affected Rust (10ms = 19%) and and JavaScript (6.75ms = 11%)
+From this you can see that there is a negligable difference between Rust and JavaScript. Python is by far the fastest language with the v2 updates. It's 4.6x faster than Rust.
+Cold starts apear to have affected Rust (10ms = 19%) and and JavaScript (6.75ms = 11%)
 
 ### 128MB
 
 | Language   | Average time (ms) | Average time (excluding cold start run) |
 | ---------- | ----------------- | --------------------------------------- |
 | Python     | 293               | 289.25                                  |
+| Python v2  | 92.2              | 92.2                                    |
 | Rust       | 295               | 292.5                                   |
 | JavaScript | 425.6             | 409.75                                  |
 
-At lower memory capcity there are much more noticable differences. Python and Rust are almost identical, but JavaScript 44% slower. This implies that javascript has higher overheads which are more affected buy the limited memory and CPU.
+At lower memory capcity the differences change, with Rust separating from JavaScript. Python is 320% faster than Rust, and JavaScript 44% slower again.
 
 # TODO
 
-[] Try [python Cache](https://docs.python.org/3/library/functools.html)
-[] Use [better benchmarks](https://programming-language-benchmarks.vercel.app/python-vs-rust)
-[] Profile lambdas at different memory allocations
+- [x] Try python optimisations
+- [] Try Rust optimisations - Python ones reduced time 3x so similar might be possible in rust
+- [] Use [better benchmarks](https://programming-language-benchmarks.vercel.app/python-vs-rust)
+- [] Profile lambdas at different memory allocations

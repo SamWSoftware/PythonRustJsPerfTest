@@ -14,3 +14,6 @@ functions:
   updatedCode:
     handler: src/updatedCode.lambda_handler
     memorySize: 512
+  updatedCode2:
+    handler: src/updatedCode2.lambda_handler
+    memorySize: 512

@@ -38,6 +38,36 @@ Average = 63.2ms
 
 Average = 293ms
 
+## Updated Code 2
+
+This uses code optimisations suggested by the comunity.
+
+v2 - use `list(range(count))` to generate the 10,000 item array.
+
+### 512 MB
+
+| run | time (ms) | cold start |
+| --- | --------- | ---------- |
+| 1   | 18        | yes        |
+| 2   | 26        | no         |
+| 3   | 25        | no         |
+| 4   | 9         | no         |
+| 5   | 10        | no         |
+
+Average = 17.8ms
+
+### 128 MB
+
+| run | time (ms) | cold start |
+| --- | --------- | ---------- |
+| 1   | 94        | yes        |
+| 2   | 93        | no         |
+| 3   | 97        | no         |
+| 4   | 83        | no         |
+| 5   | 94        | no         |
+
+Average = 92.2ms
+
 # Reproducing this yourself
 
 The python Lambdas are deployed using the Serveless Framework.
