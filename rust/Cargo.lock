@@ -432,6 +432,7 @@ dependencies = [
  "lambda_runtime",
  "rayon",
  "serde",
+ "static-rc",
  "tokio",
  "tracing",
  "tracing-subscriber",
@@ -507,6 +508,12 @@ dependencies = [
  "libc",
  "winapi",
 ]
+
+[[package]]
+name = "static-rc"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b91d0104a7b28aeda24b30919f83222570111ac0bf1aab23aaffb8f59330e654"
 
 [[package]]
 name = "syn"

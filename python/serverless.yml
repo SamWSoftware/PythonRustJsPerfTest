@@ -6,6 +6,10 @@ provider:
   name: aws
   runtime: python3.9
   region: eu-central-1
+  timeout: 600
+
+package:
+  individually: true
 
 functions:
   originalCode:
@@ -16,4 +20,8 @@ functions:
     memorySize: 512
   updatedCode2:
     handler: src/updatedCode2.lambda_handler
+    memorySize: 512
+
+  binaryTree:
+    handler: src/betterBenchmarks/binaryTree1.lambda_handler
     memorySize: 512

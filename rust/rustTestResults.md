@@ -40,5 +40,48 @@ Average without cold start = 292.5ms
 
 I followed [this tutorial](https://blog.logrocket.com/deploy-lambda-functions-rust/#upload-AWS-deploy-command) to get set up with the rust deployer Cargo.
 
+`cargo lambda build`
+
 To deploy to a specific region I used this command
+
 `cargo lambda deploy newCode --region eu-central-1`
+
+# Better Benchmarks
+
+Summing numbers might not be the best way to test Lambda performance, so I decided to use benchmarks from [programming-language-benchmarks.vercel.app](https://programming-language-benchmarks.vercel.app/python-vs-rust).
+
+Another advantage to this is that there are code solutions written by experts, so my personal coding ability isn't affecting the results.
+
+## Binary Trees - 1
+
+https://programming-language-benchmarks.vercel.app/problem/binarytrees
+Input = 18
+
+### 512MB
+
+| run | time (ms) | cold start |
+| --- | --------- | ---------- |
+| 1   | 30172     | yes        |
+| 2   | 29964     | no         |
+
+Average = 30068 ms
+
+### 1792MB
+
+| run | time (ms) | cold start |
+| --- | --------- | ---------- |
+| 1   | 8036      | yes        |
+| 2   | 8122      | no         |
+
+Average = 8079 ms
+
+### 3584MB
+
+| run | time (ms) | cold start |
+| --- | --------- | ---------- |
+| 1   | 8399      | yes        |
+| 2   | 8294      | no         |
+
+Average = 8346 ms
+
+This shows that the current rust code also doesn't take advantage of parallel processing

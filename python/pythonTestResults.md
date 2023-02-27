@@ -73,3 +73,49 @@ Average = 92.2ms
 The python Lambdas are deployed using the Serveless Framework.
 
 You can then deploy the code using `sls deploy`
+
+# Better Benchmarks
+
+Summing numbers might not be the best way to test Lambda performance, so I decided to use benchmarks from [programming-language-benchmarks.vercel.app](https://programming-language-benchmarks.vercel.app/python-vs-rust).
+
+Another advantage to this is that there are code solutions written by experts, so my personal coding ability isn't affecting the results.
+
+## Binary Trees - 1
+
+https://programming-language-benchmarks.vercel.app/problem/binarytrees
+Input = 18
+
+### 512MB
+
+| run | time (ms) | cold start |
+| --- | --------- | ---------- |
+| 1   | 86491     | yes        |
+| 2   | 87134     | no         |
+| 3   | 86373     | no         |
+| 4   | 86450     | no         |
+| 5   | 86532     | no         |
+
+Average = 86596 ms = 68.569s
+
+### 1792MB
+
+| run | time (ms) | cold start |
+| --- | --------- | ---------- |
+| 1   | 23602     | yes        |
+| 2   | 23779     | no         |
+| 3   | 23661     | no         |
+| 4   | 23748     | no         |
+| 5   | 23671     | no         |
+
+Average = 23692.2 ms = 23.6922 s
+
+This is 3.655 times faster than with 512MB, but only 3.5 times the memory
+
+### 3584MB
+
+| run | time (ms) | cold start |
+| --- | --------- | ---------- |
+| 1   | 24142     | yes        |
+| 2   | 24412     | no         |
+
+From this we can see that there is almost no benefit (with this specific code) to having more than 1792MB ram. This is due to haing more vCPU cores, but not using any parallelisation.

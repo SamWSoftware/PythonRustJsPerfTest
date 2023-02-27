@@ -60,9 +60,45 @@ Cold starts apear to have affected Rust (10ms = 19%) and and JavaScript (6.75ms 
 
 At lower memory capcity the differences change, with Rust separating from JavaScript. Python is 320% faster than Rust, and JavaScript 44% slower again.
 
+## Binary Trees
+
+Summing numbers might not be the best way to test Lambda performance, so I decided to use benchmarks from [programming-language-benchmarks.vercel.app](https://programming-language-benchmarks.vercel.app/python-vs-rust).
+
+Another advantage to this is that there are code solutions written by experts, so my personal coding ability isn't affecting the results.
+
+### 512MB
+
+| Language   | Average time (ms) |
+| ---------- | ----------------- |
+| Python     | 86596             |
+| Rust       | 30068             |
+| JavaScript | 28604             |
+
+### 1792MB
+
+| Language   | Average time (ms) |
+| ---------- | ----------------- |
+| Python     | 23692             |
+| Rust       | 8079              |
+| JavaScript | 1591.2            |
+
+### 3584MB
+
+| Language   | Average time (ms) |
+| ---------- | ----------------- |
+| Python     | 24142             |
+| Rust       | 8346              |
+| JavaScript | 1522              |
+
+### Resuts
+
+This test was very surprising, with JavaScript being the 5.4 times faster than Rust and 14.9 times faster than Python.
+
+Given the first test showed the exact opposite ordering, I'm lead to believe that the speed of code has more to do with the specific task and the packages each language has access to rather than the language it's self.
+
 # TODO
 
 - [x] Try python optimisations
 - [] Try Rust optimisations - Python ones reduced time 3x so similar might be possible in rust
-- [] Use [better benchmarks](https://programming-language-benchmarks.vercel.app/python-vs-rust)
-- [] Profile lambdas at different memory allocations
+- [x] Use [better benchmarks](https://programming-language-benchmarks.vercel.app/python-vs-rust)
+- [x] Profile lambdas at different memory allocations

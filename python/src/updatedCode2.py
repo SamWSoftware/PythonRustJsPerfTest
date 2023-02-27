@@ -15,12 +15,12 @@ def lambda_handler(event, context):
     """Lambda handler function."""
     # Measure the time it takes to spawn the processes.
     start = time.time()
-    loop = event["loop"]
+    loops = event["loops"]
     count = event["count"]
 
     # Create 25 processes.
 
-    for i in range(25):
+    for i in range(loops):
         sum_numbers(count, i)
     # Start the processes.
     
