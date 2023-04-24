@@ -90,15 +90,17 @@ Another advantage to this is that there are code solutions written by experts, s
 | Rust       | 8346              |
 | JavaScript | 1522              |
 
+I then used the Lambda Powertuning tool to run each of the lambdas at a range of memory configurations. Each configuration was ran 5 times.
+
+![Python Performance](./images/Python%20Lambda%20Performance.png)
+![Rust Performance](./images/Rust%20Lambda%20Performance.png)
+![JavaScript Performance](./images/JS%20Lambda%20Performce.png)
+
+You can then compare the rust to JS performance graphs and see that Rust is outperformed at all memory configurations.
+![Rust vs JS](./images/js-rust%20copy%202.png)
+
 ### Resuts
 
 This test was very surprising, with JavaScript being the 5.4 times faster than Rust and 14.9 times faster than Python.
 
 Given the first test showed the exact opposite ordering, I'm lead to believe that the speed of code has more to do with the specific task and the packages each language has access to rather than the language it's self.
-
-# TODO
-
-- [x] Try python optimisations
-- [] Try Rust optimisations - Python ones reduced time 3x so similar might be possible in rust
-- [x] Use [better benchmarks](https://programming-language-benchmarks.vercel.app/python-vs-rust)
-- [x] Profile lambdas at different memory allocations
